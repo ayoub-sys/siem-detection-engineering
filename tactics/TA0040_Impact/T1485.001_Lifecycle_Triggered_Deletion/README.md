@@ -1,0 +1,26 @@
+# T1485.001 – Lifecycle-Triggered Deletion
+
+## Tactic
+TA0040 – Impact
+
+## Description
+Adversaries may modify the lifecycle policies of a cloud storage bucket to destroy all objects stored within.  
+
+Cloud storage buckets often allow users to set lifecycle policies to automate the migration, archival, or deletion of objects after a set period of time.(Citation: AWS Storage Lifecycles)(Citation: GCP Storage Lifecycles)(Citation: Azure Storage Lifecycles) If a threat actor has sufficient permissions to modify these policies, they may be able to delete all objects at once. 
+
+For example, in AWS environments, an adversary with the `PutLifecycleConfiguration` permission may use the `PutBucketLifecycle` API call to apply a lifecycle policy to an S3 bucket that deletes all objects in the bucket after one day.(Citation: Palo Alto Cloud Ransomware)(Citation: Halcyon AWS Ransomware 2025) In addition to destroying data for purposes of extortion and [Financial Theft](https://attack.mitre.org/techniques/T1657), adversaries may also perform this action on buckets storing cloud logs for [Indicator Removal](https://attack.mitre.org/techniques/T1070).(Citation: Datadog S3 Lifecycle CloudTrail Logs)
+
+## Data Sources
+N/A
+
+## Detection Ideas
+- TODO
+
+## False Positives
+- TODO
+
+## Response Actions
+- TODO
+
+## References
+- https://attack.mitre.org/techniques/T1485.001/

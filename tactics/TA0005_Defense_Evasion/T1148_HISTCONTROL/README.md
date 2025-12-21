@@ -1,0 +1,22 @@
+# T1148 – HISTCONTROL
+
+## Tactic
+TA0005 – Defense Evasion
+
+## Description
+The <code>HISTCONTROL</code> environment variable keeps track of what should be saved by the <code>history</code> command and eventually into the <code>~/.bash_history</code> file when a user logs out. This setting can be configured to ignore commands that start with a space by simply setting it to "ignorespace". <code>HISTCONTROL</code> can also be set to ignore duplicate commands by setting it to "ignoredups". In some Linux systems, this is set by default to "ignoreboth" which covers both of the previous examples. This means that “ ls” will not be saved, but “ls” would be saved by history. <code>HISTCONTROL</code> does not exist by default on macOS, but can be set by the user and will be respected. Adversaries can use this to operate without leaving traces by simply prepending a space to all of their terminal commands.
+
+## Data Sources
+N/A
+
+## Detection Ideas
+- TODO
+
+## False Positives
+- TODO
+
+## Response Actions
+- TODO
+
+## References
+- https://attack.mitre.org/techniques/T1148/

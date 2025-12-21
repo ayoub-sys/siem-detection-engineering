@@ -1,0 +1,23 @@
+# T1150 – Plist Modification
+
+## Tactic
+TA0004 – Privilege Escalation
+
+## Description
+Property list (plist) files contain all of the information that macOS and OS X uses to configure applications and services. These files are UTF-8 encoded and formatted like XML documents via a series of keys surrounded by < >. They detail when programs should execute, file paths to the executables, program arguments, required OS permissions, and many others. plists are located in certain locations depending on their purpose such as <code>/Library/Preferences</code> (which execute with elevated privileges) and <code>~/Library/Preferences</code> (which execute with a user's privileges). 
+Adversaries can modify these plist files to point to their own code, can use them to execute their code in the context of another user, bypass whitelisting procedures, or even use them as a persistence mechanism. (Citation: Sofacy Komplex Trojan)
+
+## Data Sources
+N/A
+
+## Detection Ideas
+- TODO
+
+## False Positives
+- TODO
+
+## Response Actions
+- TODO
+
+## References
+- https://attack.mitre.org/techniques/T1150/

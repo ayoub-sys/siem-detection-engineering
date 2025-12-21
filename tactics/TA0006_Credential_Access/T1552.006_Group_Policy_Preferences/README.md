@@ -1,0 +1,32 @@
+# T1552.006 – Group Policy Preferences
+
+## Tactic
+TA0006 – Credential Access
+
+## Description
+Adversaries may attempt to find unsecured credentials in Group Policy Preferences (GPP). GPP are tools that allow administrators to create domain policies with embedded credentials. These policies allow administrators to set local accounts.(Citation: Microsoft GPP 2016)
+
+These group policies are stored in SYSVOL on a domain controller. This means that any domain user can view the SYSVOL share and decrypt the password (using the AES key that has been made public).(Citation: Microsoft GPP Key)
+
+The following tools and scripts can be used to gather and decrypt the password file from Group Policy Preference XML files:
+
+* Metasploit’s post exploitation module: <code>post/windows/gather/credentials/gpp</code>
+* Get-GPPPassword(Citation: Obscuresecurity Get-GPPPassword)
+* gpprefdecrypt.py
+
+On the SYSVOL share, adversaries may use the following command to enumerate potential GPP XML files: <code>dir /s * .xml</code>
+
+## Data Sources
+N/A
+
+## Detection Ideas
+- TODO
+
+## False Positives
+- TODO
+
+## Response Actions
+- TODO
+
+## References
+- https://attack.mitre.org/techniques/T1552.006/
